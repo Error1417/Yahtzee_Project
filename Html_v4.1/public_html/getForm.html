@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Create the _Get Object</title>
+    <script type="text/javascript" src="././assets/javascript/getForm.js"></script>
+    <style>
+        body {
+            background-image: url('good.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        var url = document.location.href;
+        $_GET = getForm(url);
+        $_GET.hiScore = 0;
+
+        var newText = JSON.stringify($_GET);
+
+        // Retrieve existing data from local storage
+        var existingData = localStorage.getItem('UserData');
+        var existingArray = existingData ? JSON.parse(existingData) : [];
+
+        // Add new data to the existing array
+        existingArray.push($_GET);
+
+        // Save the updated array to local storage
+        var updatedData = JSON.stringify(existingArray);
+        localStorage.setItem('UserData', updatedData);
+
+        // Display an alert message
+        alert("Your account has been created.");
+
+        // Delay the redirection to the login page by 5 seconds
+        setTimeout(function() {
+            window.location.href = "login.html";
+        }, 1500);
+    </script>
+</body>
+</html>
+
+
