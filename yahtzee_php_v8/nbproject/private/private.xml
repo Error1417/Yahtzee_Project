@@ -3,7 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/yahtzee_php_v8/startScreen.html</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/yahtzee_php_v8/assets/javascript/Yahtzee.js</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/yahtzee_php_v8/assets/javascript/login.js</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/yahtzee_php_v8/DBUpdate.php</file>
         </group>
     </open-files>
 </project-private>

@@ -33,10 +33,12 @@ function validateLogin(username, password) {
 
     let validUser = false;
     let isAdmin = false;
+    let currentUserData;
 
     for(let user of userData) {
         if((user.Name === username || user.Email === username) && user.Password === password) {
             validUser = true;
+            currentUserData = user;
             setCurrentPlayer(username);
             if(user === userData[0]) {
                 isAdmin = true;
@@ -45,6 +47,9 @@ function validateLogin(username, password) {
         }
     }
     if(validUser) {
+        // Create a cookie with the user data
+        document.cookie = `UserData=${JSON.stringify(currentUserData)}; path=/`;
+
         if(isAdmin) {
             window.location.href = 'AdminMenuPage.html';
         } else {
@@ -54,6 +59,7 @@ function validateLogin(username, password) {
         setFormMessage(loginForm, "error", "Username/Email or Password is incorrect, please create an account if you haven't done so.");
     }
 }
+
 
 
 // Function to set the current player data
